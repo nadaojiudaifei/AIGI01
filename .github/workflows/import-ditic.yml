@@ -1,0 +1,59 @@
+name: Import pristine DiT-IC
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/import-ditic.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: import-ditic
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Import pinned upstream without changing existing upstream files
+        shell: bash
+        run: |
+          set -euo pipefail
+          pin=cd43f5d9761fb34f5224622145629d3ff2b89ca1
+          git fetch --no-tags https://github.com/Eric-qi/DiT-IC.git "$pin"
+          test "$(git rev-parse FETCH_HEAD)" = "$pin"
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          pin='cd43f5d9761fb34f5224622145629d3ff2b89ca1'
+          paths=subprocess.check_output(['git','ls-tree','-r','--name-only','-z',pin]).decode().split('\0')
+          paths=[p for p in paths if p]
+          for name in paths:
+              p=pathlib.Path(name)
+              if p.exists() or p.is_symlink():
+                  data=os.readlink(p).encode() if p.is_symlink() else p.read_bytes()
+                  original=subprocess.check_output(['git','show',pin+':'+name])
+                  if data != original:
+                      raise SystemExit('Refusing to overwrite conflicting file: '+name)
+          subprocess.run(['git','restore','--source='+pin,'--staged','--worktree','--',*paths],check=True)
+          rows={}
+          for name in paths:
+              p=pathlib.Path(name)
+              data=os.readlink(p).encode() if p.is_symlink() else p.read_bytes()
+              original=subprocess.check_output(['git','show',pin+':'+name])
+              if data != original:
+                  raise SystemExit('Verification failed: '+name)
+              rows[name]={'sha256':hashlib.sha256(data).hexdigest(),'symlink':p.is_symlink()}
+          pathlib.Path('aigi_docs').mkdir(exist_ok=True)
+          pathlib.Path('aigi_docs/UPSTREAM_LOCK.json').write_text(json.dumps({'repository':'https://github.com/Eric-qi/DiT-IC.git','commit':pin,'files':rows},indent=2)+'\n')
+          print('Verified pristine upstream files:',len(rows))
+          PY
+          git config user.name 'AIGI01 import bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add aigi_docs/UPSTREAM_LOCK.json
+          if git diff --cached --quiet; then
+            echo 'All upstream files are already present and identical.'
+          else
+            git commit -m "vendor: pristine DiT-IC $pin with SHA256 manifest"
+            git push origin HEAD:main
+          fi
