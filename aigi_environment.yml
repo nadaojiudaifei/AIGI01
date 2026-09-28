@@ -1,0 +1,9 @@
+# Explicit remote-server recipe. This file was not used to create an environment here.
+name: aigi01
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - git
+  - p7zip

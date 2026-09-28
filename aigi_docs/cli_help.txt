@@ -1,0 +1,51 @@
+usage: python -m aigi [-h]
+                      {catalog,models,model-url,data-hf,data-local,split,caption,configure,teacher,train,infer,encode,decode,profile,acceptance,evaluate,warmup,matrix,run,compare,study,study-results,ocr-assets,ocr-data,ocr-prepare,ocr-predict,ocr-score,checkpoint-compare,suite,inspect,doctor} ...
+
+AIGI01: additive DiT-IC research implementation
+
+positional arguments:
+  {catalog,models,model-url,data-hf,data-local,split,caption,configure,teacher,train,infer,encode,decode,profile,acceptance,evaluate,warmup,matrix,run,compare,study,study-results,ocr-assets,ocr-data,ocr-prepare,ocr-predict,ocr-score,checkpoint-compare,suite,inspect,doctor}
+    catalog             Print verified dataset/model catalog; no download
+    models              Plan model download; --download explicitly executes it
+    model-url           Download an HTTPS/GitHub-release weight with required
+                        SHA256
+    data-hf             Export a catalog HF dataset or its already-downloaded
+                        local copy
+    data-local          Build manifest from local image folder and prompt
+                        sidecars
+    split               Deduplicate pixels; group original prompts; fixed
+                        98/1/1 split
+    caption             Generate BLIP captions ONLY for missing prompts
+    configure           Resolve asset paths and write a strict new
+                        configuration
+    evaluate            Compute native-resolution metrics from an
+                        inference.json
+    warmup              Explicitly download/cache perceptual metric models on
+                        the remote server
+    matrix              Generate experiment plan; NEVER starts training
+    run                 Print experiment plan, or run sequentially with
+                        --execute
+    study               Generate blinded human-study material; no fabricated
+                        scores
+    study-results       Analyze supplied anonymous complete-panel study
+                        responses
+    ocr-assets          Plan OCR evaluator assets; --download explicitly
+                        fetches them
+    ocr-data            Export the pinned OCRBench V2 HF dataset; never calls
+                        OCR
+    ocr-prepare         Prepare local official QA and a unique-image
+                        compression manifest
+    ocr-predict         Run a fixed local Qwen2.5-VL on original or
+                        reconstructed images
+    ocr-score           Plan/run the pinned original OCRBench V2 scoring
+                        scripts
+    checkpoint-compare  Exact tensor/state comparison of uninterrupted vs
+                        resumed training
+    suite               Create supplementary OCR, profiling and human-study
+                        jobs for a completed matrix
+    inspect             Inspect a packet without a model or original image
+    doctor              Read-only dependency/asset diagnostics; installs
+                        nothing
+
+options:
+  -h, --help            show this help message and exit

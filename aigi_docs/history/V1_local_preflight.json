@@ -1,0 +1,90 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "packages": {
+    "torch": {
+      "installed": "2.10.0+cpu",
+      "target": "2.8.0",
+      "matches": false
+    },
+    "torchvision": {
+      "installed": "0.25.0+cpu",
+      "target": "0.23.0",
+      "matches": false
+    },
+    "compressai": {
+      "installed": null,
+      "target": "1.2.8",
+      "matches": false
+    },
+    "diffusers": {
+      "installed": null,
+      "target": "0.35.2",
+      "matches": false
+    },
+    "transformers": {
+      "installed": null,
+      "target": "4.55.4",
+      "matches": false
+    },
+    "peft": {
+      "installed": null,
+      "target": "0.17.1",
+      "matches": false
+    },
+    "huggingface-hub": {
+      "installed": "1.16.1",
+      "target": "0.34.4",
+      "matches": false
+    },
+    "datasets": {
+      "installed": null,
+      "target": "4.0.0",
+      "matches": false
+    },
+    "lpips": {
+      "installed": null,
+      "target": "0.1.4",
+      "matches": false
+    },
+    "pyiqa": {
+      "installed": null,
+      "target": "0.1.15.post2",
+      "matches": false
+    },
+    "torchmetrics": {
+      "installed": "1.9.0",
+      "target": "1.8.2",
+      "matches": false
+    },
+    "torch-fidelity": {
+      "installed": null,
+      "target": "0.3.0",
+      "matches": false
+    },
+    "numpy": {
+      "installed": "2.3.5",
+      "target": "1.26.4",
+      "matches": false
+    }
+  },
+  "errors": [
+    "torch: target 2.8.0, installed 2.10.0+cpu",
+    "torchvision: target 0.23.0, installed 0.25.0+cpu",
+    "compressai: target 1.2.8, installed None",
+    "diffusers: target 0.35.2, installed None",
+    "transformers: target 4.55.4, installed None",
+    "peft: target 0.17.1, installed None",
+    "huggingface-hub: target 0.34.4, installed 1.16.1",
+    "datasets: target 4.0.0, installed None",
+    "lpips: target 0.1.4, installed None",
+    "pyiqa: target 0.1.15.post2, installed None",
+    "torchmetrics: target 1.8.2, installed 1.9.0",
+    "torch-fidelity: target 0.3.0, installed None",
+    "numpy: target 1.26.4, installed 2.3.5"
+  ],
+  "note": "A preflight report is not a GPU-training or entropy round-trip validation.",
+  "cuda_available": false,
+  "cuda_build": null,
+  "gpu_count": 0
+}

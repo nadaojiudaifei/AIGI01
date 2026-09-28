@@ -1,0 +1,12 @@
+{
+  "destination": "/mnt/data/AIGI01_NOT_CREATED",
+  "upstream": "https://github.com/Eric-qi/DiT-IC.git",
+  "commit": "cd43f5d9761fb34f5224622145629d3ff2b89ca1",
+  "remote": "https://github.com/nadaojiudaifei/AIGI01.git",
+  "sequence": [
+    "checkout pristine upstream",
+    "push upstream first if requested",
+    "add overlay without collisions",
+    "commit and push additions if requested"
+  ]
+}

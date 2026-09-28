@@ -1,0 +1,326 @@
+{
+  "format": "aigi01-additive-source-v2",
+  "file_count_without_manifest": 80,
+  "files": {
+    "AIGI_README.md": {
+      "bytes": 3822,
+      "sha256": "67943122dc579b2d9029e9894619b793c4ef5ead3bc2ce4e560db62a5cfeaed8"
+    },
+    "aigi/__init__.py": {
+      "bytes": 269,
+      "sha256": "3d2292803a971c86df505dabe03114613c2b1ddf53b6ff83493592985c697297"
+    },
+    "aigi/__main__.py": {
+      "bytes": 16570,
+      "sha256": "0671b19e8dba7d11a5baaa00d91b32b0d4e1d86097cb8885800b4ee8fb314a4c"
+    },
+    "aigi/acceptance.py": {
+      "bytes": 6322,
+      "sha256": "27d6804392e99373becfc611562e3caec23d722edf331c21d379f90d8e2fb5cd"
+    },
+    "aigi/assets.py": {
+      "bytes": 7875,
+      "sha256": "e112ccabb2a3e243af2e85fccbc4f48774acca4475814a1b04540e93c1702667"
+    },
+    "aigi/augmentation.py": {
+      "bytes": 1890,
+      "sha256": "0206cf43e205ca7b362439977337603aa14c8d982b4952320e3b552a9266add0"
+    },
+    "aigi/backbone.py": {
+      "bytes": 5725,
+      "sha256": "34ceefdc77f9b903582a09fff5f3f0f3fc3cafc85c3e63409af978503042b5d3"
+    },
+    "aigi/bitstream.py": {
+      "bytes": 5747,
+      "sha256": "de32069e25afb2263ebeb0854943dbfb2dc687ef1193e3f88d4099a4dfd24d62"
+    },
+    "aigi/caption.py": {
+      "bytes": 1335,
+      "sha256": "dcaa871012e24b04b0f4db9bb564cc91fbf43a281a3ec68dc5a7546c8f18b9e2"
+    },
+    "aigi/checkpoint.py": {
+      "bytes": 5002,
+      "sha256": "c76b447a0573780ee7a5c3cc0a0c519fa07f0a2fde7b6ea9d4dd3548211eea2c"
+    },
+    "aigi/compare.py": {
+      "bytes": 3307,
+      "sha256": "66b86bb8a40183d242c4b2a1a8a333081c643e345cafa159ce780928d56719dd"
+    },
+    "aigi/config.py": {
+      "bytes": 6860,
+      "sha256": "c891e9515966e3fa1b75bc285b311c461f827e28784acc98a46848e69167fd96"
+    },
+    "aigi/data.py": {
+      "bytes": 11120,
+      "sha256": "8ba5902e2938c6793cb2c8d7039f81a428e6b8801da5a2d5b977807736ea0a37"
+    },
+    "aigi/doctor.py": {
+      "bytes": 2782,
+      "sha256": "3c59d334500207ec89ca88cb7c8db9daed3235356a9cb681ba610080243bcf6d"
+    },
+    "aigi/entropy.py": {
+      "bytes": 6211,
+      "sha256": "8ef53b5e38653ccb3074987043eaa9d98647cf68ec2fdf6e7144f88e2188ba27"
+    },
+    "aigi/evaluate.py": {
+      "bytes": 5705,
+      "sha256": "4aa4d5a5fb7f61d6a6d26a5e79b3ea95a1e68463ef5de5a4ffd6453efa15bc5c"
+    },
+    "aigi/experiments.py": {
+      "bytes": 10429,
+      "sha256": "1fbe81ea4de7ceec9a60146ef04dcc40aa381bb0c52e09d6956087fa99f572c4"
+    },
+    "aigi/hf_worker.py": {
+      "bytes": 5048,
+      "sha256": "7ff93207f5d7a5b5b1c80c482d36700eefe9f8fd70d7519f6cad184ddd46c2e0"
+    },
+    "aigi/infer.py": {
+      "bytes": 7648,
+      "sha256": "7ac4f7b1f7bdb3f20ee6d95df66d26241223bef0a6e77b586ec99ebec64d6277"
+    },
+    "aigi/instrumentation.py": {
+      "bytes": 4595,
+      "sha256": "22605ee1d21292dc7e61d19414cd396d6446665a3e8dc94706d6390a3225f92c"
+    },
+    "aigi/losses.py": {
+      "bytes": 5115,
+      "sha256": "3b30be8c6724c4a9953edc92ee7261cbeb573c68a1fbd35706ff5089a016fc5e"
+    },
+    "aigi/math_ops.py": {
+      "bytes": 3081,
+      "sha256": "1fe26434e9a5a98e0cd268e83af7303b92ceef14409c8fbd10056974117a32be"
+    },
+    "aigi/model.py": {
+      "bytes": 9317,
+      "sha256": "3f81ca045dc7463649e4e6db93efd58bba79a56dfcd366fd9090c71f1d38f16e"
+    },
+    "aigi/ocrbench.py": {
+      "bytes": 12657,
+      "sha256": "768d302094e06c5c85d9d55548ee07b4a8564b53b30bafa52838c856eaa84db3"
+    },
+    "aigi/optimization.py": {
+      "bytes": 1132,
+      "sha256": "02db1252fe37d70cd26c31ad9dccabf149fccaaf1164e532db23c25124b251ea"
+    },
+    "aigi/profile.py": {
+      "bytes": 2758,
+      "sha256": "83ed68949d78c7d9cc239ad064e0f9538a6b0bbfca8dcc5d8955b3435878f09f"
+    },
+    "aigi/registry.py": {
+      "bytes": 1950,
+      "sha256": "c646a5accb8e0868a51d4b1c9c5a556a0266a16a667c03bd28ea44c33beca1da"
+    },
+    "aigi/semantic.py": {
+      "bytes": 5721,
+      "sha256": "5c03336d6a6e4376b5329b344a4cd6a05cb946715f28de87bf010b277bbf4e89"
+    },
+    "aigi/study.py": {
+      "bytes": 9755,
+      "sha256": "a39ecdc12c0c0f675526607a5f1ab50e7f3145341de839b421b3d7a223f34918"
+    },
+    "aigi/suite.py": {
+      "bytes": 3176,
+      "sha256": "fdc654e6324c02c3e65afa8974eb95da4d5f406860597284bea402a96691b3b5"
+    },
+    "aigi/teacher.py": {
+      "bytes": 7759,
+      "sha256": "a63767e15281ad3cc355814515eaffa1d9188ce5a698a08e1f5fc2c2dba0de8d"
+    },
+    "aigi/text.py": {
+      "bytes": 3008,
+      "sha256": "8a9b4715fcea31d34437af0e3bf23aca4051b0ee364678cc17fa542257700ca0"
+    },
+    "aigi/train.py": {
+      "bytes": 13380,
+      "sha256": "b6b269c752eb2afd45f51e289e5d91c0b26f684e7675132f44048b9af4bb729a"
+    },
+    "aigi/utils.py": {
+      "bytes": 2993,
+      "sha256": "857bfff74064a6ca5146fa4467fd0454b70b2455c9ccdd2853b6e076c8eed1f5"
+    },
+    "aigi_configs/cadc_style_q3.json": {
+      "bytes": 1786,
+      "sha256": "8dbfd4b1dcda84e99af8c1743b395c5c57666c8bf7052bfac67acdd6be7928ec"
+    },
+    "aigi_configs/ditic_q3.json": {
+      "bytes": 1771,
+      "sha256": "8c1621ae6fc431fc27e5963c61164e7e53567545427bdcd2657903bf8194d043"
+    },
+    "aigi_configs/idea1_q3.json": {
+      "bytes": 1771,
+      "sha256": "34c35246224a169145907531c1d9d4ad746b43279f2a6843668df4396637ba3f"
+    },
+    "aigi_configs/idea2_q3.json": {
+      "bytes": 1771,
+      "sha256": "dbe160efd05ac23b386f31bc28ac50dd7e22e844b35b46cd0a733786a049cd9b"
+    },
+    "aigi_configs/joint_q3.json": {
+      "bytes": 1771,
+      "sha256": "6d5434bb8fcfae9cd2b22c349f7bacebfec137053373a3b54f3476f8cb151e1f"
+    },
+    "aigi_configs/joint_q3_augmented.json": {
+      "bytes": 1804,
+      "sha256": "b59891ca63dedb0a8cf37b962062ee6cb01fc56be9058932b4195dcd7a1b0557"
+    },
+    "aigi_configs/maps_q3.json": {
+      "bytes": 1763,
+      "sha256": "d7e6c251f3bb01df382d650737a86ede082e2cd3de8750246e848eb9c05f6912"
+    },
+    "aigi_configs/smoke_q3.json": {
+      "bytes": 1755,
+      "sha256": "c7d9e82b383f27cc3244c18f06e95598c887040c39bfbbdfb6ac79e42cf5d579"
+    },
+    "aigi_docs/ALGORITHM_ZH.md": {
+      "bytes": 28789,
+      "sha256": "d40cc61dfe7aac9aa3211ac43a63e26af73f4e92de936acf7ee835827f98ae9b"
+    },
+    "aigi_docs/DATA_MODELS_ZH.md": {
+      "bytes": 10200,
+      "sha256": "238325b637424996afb807d104da90a33281bf1055530ebce80716508f56bdfd"
+    },
+    "aigi_docs/EXPERIMENTS_ZH.md": {
+      "bytes": 14996,
+      "sha256": "eccc2683f5dc966c38888ba8fb767c9fbc229af560152028e27109b5041d5f99"
+    },
+    "aigi_docs/QUICKSTART_ZH.md": {
+      "bytes": 19023,
+      "sha256": "80938f9b65822dd5614ca89b18fef9da48817c73f4a7d87477f50a0a16e5e97a"
+    },
+    "aigi_docs/SOURCES.md": {
+      "bytes": 4750,
+      "sha256": "3b2e2aedea11a8052cf43274ac91cac516b2dcf3e768b15a1cb371273eacb2cf"
+    },
+    "aigi_docs/V2_USAGE_ZH.md": {
+      "bytes": 13514,
+      "sha256": "21c6004fa9986c17b3bbfb80d9269fdff2840d69692064549b7be2a5c9a2c2ac"
+    },
+    "aigi_docs/VALIDATION_ZH.md": {
+      "bytes": 3900,
+      "sha256": "b5ad33f90e467e5370930a2209425cffb8bb518bf4702b9d64e9787ae5391f85"
+    },
+    "aigi_docs/catalog.json": {
+      "bytes": 2633,
+      "sha256": "01f74fdced6c68ba00c357652bfdd9ac40a5d7a9b96b826e8f5b7d1c20d9e27f"
+    },
+    "aigi_docs/cli_help.txt": {
+      "bytes": 3095,
+      "sha256": "4257e5c1ed9c1d1ea4710ae2633301bdabe2e5abeefad3e02d952b8873eb5e0f"
+    },
+    "aigi_docs/cpu_tests.txt": {
+      "bytes": 180,
+      "sha256": "fe582ef67bddc80299c4e5dbdb2b50b5cd8ee6547bdd6e8fcea48cd9b32579b9"
+    },
+    "aigi_docs/cpu_tests.xml": {
+      "bytes": 11643,
+      "sha256": "1930391ba43b70bfc57c0f707891d88304ec1875d0acf4336c9430b19dfc2a51"
+    },
+    "aigi_docs/history/V1_VALIDATION_ZH.md": {
+      "bytes": 5499,
+      "sha256": "d0d6070b4da8bb29b8baeb186440187d1df3fa0826bb66ee851cc3c63fd357f5"
+    },
+    "aigi_docs/history/V1_bootstrap_plan.txt": {
+      "bytes": 401,
+      "sha256": "646e48fdc99f11a1c5ca121044e13ff614162ac7e739066a75c26c1eafbbe439"
+    },
+    "aigi_docs/history/V1_cpu_tests.txt": {
+      "bytes": 99,
+      "sha256": "f8fe76b58c36e7f61d360a4e6d4ef9d64facd50f5d15c6b708b994988bd19631"
+    },
+    "aigi_docs/history/V1_cpu_tests.xml": {
+      "bytes": 7661,
+      "sha256": "49a9636da771af1346ba7b8b0848aee966a6172f88095f2c5220514623e65695"
+    },
+    "aigi_docs/history/V1_local_preflight.json": {
+      "bytes": 2275,
+      "sha256": "62d8611631aa7ba572aa004017e3d534fb1dc00cb96ca72eb35dd26ec9580685"
+    },
+    "aigi_docs/history/V1_validation.json": {
+      "bytes": 1008,
+      "sha256": "407fe4ed21aa532dc43e2134607764ad4f87382d0a6c2580e91ce7c7f3e69f3e"
+    },
+    "aigi_docs/local_preflight.json": {
+      "bytes": 2326,
+      "sha256": "d767795a4895bd0a2b64d95addcba22be3ba76a4e5efa0fc616bb1e779168dc0"
+    },
+    "aigi_docs/numerical_example.json": {
+      "bytes": 571,
+      "sha256": "abfdf90eeace2b0605de9caa5cc66dc5e57efdab9eb7cd79ae88a86ad272153f"
+    },
+    "aigi_docs/source_validation.json": {
+      "bytes": 1919,
+      "sha256": "7d3b0d6049ba277660628f4ae6931b1de6974971a71ff970a557b39a3285efa0"
+    },
+    "aigi_docs/validation.json": {
+      "bytes": 2133,
+      "sha256": "1e5a20199d22c6047ccfce1d19d8b88e7346db0b3b8637b415e4e1a15e400c28"
+    },
+    "aigi_environment.yml": {
+      "bytes": 182,
+      "sha256": "a862d649d100dbde89b1ecc0a412a340f92852c5634ff59b8f12413d81bf6f42"
+    },
+    "aigi_pytest.ini": {
+      "bytes": 46,
+      "sha256": "e93e0ba57b6c583a3032f2fe244d74ab8203277dfdb5ad3e4dde695af8e795ec"
+    },
+    "aigi_requirements.txt": {
+      "bytes": 800,
+      "sha256": "0b1cd77839893f1a7b5b04155c94243c8191dca6c1c3b5d4ca69379756b91a15"
+    },
+    "aigi_scripts/bootstrap_upstream.py": {
+      "bytes": 5121,
+      "sha256": "7c67b3d96014080d724df9dbe7fde1a7272169cb936c7b8583fa5537c968d308"
+    },
+    "aigi_scripts/check_cpu.sh": {
+      "bytes": 272,
+      "sha256": "90e1443450d488adc8cca4901a734192f10d72af0d0d59185237f742dbf03d8b"
+    },
+    "aigi_scripts/numerical_example.py": {
+      "bytes": 1289,
+      "sha256": "2994cec7bd0d3ed9bc031ed24fbfee9497364c1d5de8c4824ac9e21833df7ab6"
+    },
+    "aigi_scripts/remote_acceptance.sh": {
+      "bytes": 321,
+      "sha256": "390ae68446c4001785ae41f7d499d194fe6e536bca5fdf4795c580ddf1b33996"
+    },
+    "aigi_scripts/run_plan.sh": {
+      "bytes": 267,
+      "sha256": "c108cc22dabaa140269585aa1528a8b597c2343d510d1248cd6ac49c951b260d"
+    },
+    "aigi_scripts/train_ddp.sh": {
+      "bytes": 351,
+      "sha256": "7b6da058de209abe7f35929785f88fc34961e273cda345f2f2a758cb7ee1ee70"
+    },
+    "aigi_scripts/train_single.sh": {
+      "bytes": 294,
+      "sha256": "0f5aa2f919edae89744e00e8d1992ac6982c6e70a71bea0e23bacffdb4b36a08"
+    },
+    "aigi_scripts/validate_source.py": {
+      "bytes": 3075,
+      "sha256": "c0f3aa40db29f52136dc5ad3abe595d4a085b4f0ad193ed1c0aaf79c4f495df9"
+    },
+    "aigi_tests/conftest.py": {
+      "bytes": 227,
+      "sha256": "0fc92646b237914989362e831d0b84b14ea12c79a003cdafcc6f52a6170f741b"
+    },
+    "aigi_tests/test_causal_loop.py": {
+      "bytes": 5543,
+      "sha256": "00273851f06e6b29e4cbad79724d4ce0e680be5b6209de74cf83e8e76934efdf"
+    },
+    "aigi_tests/test_configuration.py": {
+      "bytes": 5316,
+      "sha256": "fb7d31a1543f19dcdbcdd55d5c407e95c74cf626e14761023f7cf1ed1b6ff16f"
+    },
+    "aigi_tests/test_container_data.py": {
+      "bytes": 4205,
+      "sha256": "177429ae274087476bc6ac114e4abb0cb9b1482c5f62abf8b8b790db0252b5e5"
+    },
+    "aigi_tests/test_math_semantic.py": {
+      "bytes": 4293,
+      "sha256": "109b0ede3bc6bb5d769def33cee1071325d66370a8ce0b46e930b601138682d6"
+    },
+    "aigi_tests/test_v2_workflows.py": {
+      "bytes": 10128,
+      "sha256": "93f52f90d44db8acb56561885f5f7eef019f775901afe16c6c32d7de54085b82"
+    }
+  }
+}

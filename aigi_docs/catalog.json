@@ -1,0 +1,112 @@
+{
+  "datasets": {
+    "kodak": {
+      "repo": "danjacobellis/kodak",
+      "split": "validation",
+      "image": "image",
+      "prompt": null,
+      "kind": "natural",
+      "loader": "hf",
+      "count": 24,
+      "evaluation_only": true
+    },
+    "div2k_train": {
+      "repo": "yangtao9009/DIV2K",
+      "split": "train",
+      "image": "image",
+      "prompt": null,
+      "kind": "natural",
+      "loader": "hf",
+      "count": 800
+    },
+    "lsdir": {
+      "repo": "danjacobellis/LSDIR",
+      "split": "train",
+      "image": "image",
+      "prompt": null,
+      "kind": "natural",
+      "loader": "hf",
+      "count": "about 85K"
+    },
+    "mlic100k": {
+      "repo": "Whiteboat/MLIC-Train-100K",
+      "split": "train",
+      "image": "image",
+      "prompt": null,
+      "kind": "natural",
+      "loader": "7z",
+      "count": "100K",
+      "patterns": [
+        "train512x512.7z.*"
+      ]
+    },
+    "diffusiondb_1k": {
+      "repo": "poloclub/diffusiondb",
+      "split": "train",
+      "image": "image",
+      "prompt": "p",
+      "kind": "aigi",
+      "loader": "diffusiondb",
+      "count": 1000,
+      "first": 1,
+      "last": 1,
+      "large": false
+    },
+    "diffusiondb_2m": {
+      "repo": "poloclub/diffusiondb",
+      "split": "train",
+      "image": "image",
+      "prompt": "p",
+      "kind": "aigi",
+      "loader": "diffusiondb",
+      "count": 2000000,
+      "first": 1,
+      "last": 2000,
+      "large": false
+    },
+    "diffusiondb_14m": {
+      "repo": "poloclub/diffusiondb",
+      "split": "train",
+      "image": "image",
+      "prompt": "p",
+      "kind": "aigi",
+      "loader": "diffusiondb",
+      "count": 14000000,
+      "first": 1,
+      "last": 14000,
+      "large": true
+    },
+    "diffusiondb_filtered": {
+      "repo": "whosouravsharma/text-to-image-diffusiondb-2M",
+      "split": "train",
+      "image": "image",
+      "prompt": "prompt",
+      "kind": "aigi",
+      "loader": "hf",
+      "count": "18,219 across splits, not 2M"
+    },
+    "sdxl10k": {
+      "repo": "ash12321/sdxl-generated-10k",
+      "split": "train",
+      "image": "image",
+      "prompt": null,
+      "kind": "aigi",
+      "loader": "hf",
+      "count": 10000
+    },
+    "multi_generator": {
+      "repo": "Shanmuk4622/ai-image-detection-dataset",
+      "split": "train",
+      "image": "image",
+      "prompt": "prompt",
+      "kind": "mixed",
+      "loader": "hf",
+      "count": "card: 10K real + 6 x 10K generated"
+    }
+  },
+  "models": {
+    "sana": "Efficient-Large-Model/Sana_600M_1024px_diffusers",
+    "ditic": "JunqiShi/DiT-IC",
+    "caption": "Salesforce/blip-image-captioning-base"
+  }
+}
