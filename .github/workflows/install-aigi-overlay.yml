@@ -1,0 +1,85 @@
+name: Install verified AIGI01 overlay
+on:
+  push:
+    branches: [main]
+    paths: ['.github/aigi_deploy/manifest.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: install-aigi-overlay
+  cancel-in-progress: false
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify payload, extract only additive paths, and guard original files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import ast, base64, hashlib, io, json, pathlib, subprocess, tarfile
+          root=pathlib.Path('.')
+          manifest=json.loads((root/'.github/aigi_deploy/manifest.json').read_text())
+          data=''.join(''.join((root/p).read_text().split()) for p in manifest['parts'])
+          archive=base64.b64decode(data,validate=True)
+          if hashlib.sha256(archive).hexdigest()!=manifest['sha256']:
+              raise SystemExit('Payload SHA256 mismatch; no source files written')
+          lock=json.loads((root/'aigi_docs/UPSTREAM_LOCK.json').read_text())
+          allowed={'aigi','aigi_configs','aigi_scripts','aigi_tests','aigi_docs'}
+          roots={'AIGI_README.md','aigi_requirements.txt','aigi_environment.yml','aigi_pytest.ini'}
+          def verify_originals():
+              for name,record in lock['files'].items():
+                  p=root/name
+                  if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=record['sha256']:
+                      raise SystemExit('Original upstream file changed: '+name)
+          verify_originals()
+          with tarfile.open(fileobj=io.BytesIO(archive),mode='r:xz') as tf:
+              members=tf.getmembers()
+              for m in members:
+                  p=pathlib.PurePosixPath(m.name)
+                  if not m.isfile() or p.is_absolute() or '..' in p.parts or '\\' in m.name:
+                      raise SystemExit('Unsafe source member: '+m.name)
+                  if p.parts[0] not in allowed and m.name not in roots:
+                      raise SystemExit('Non-additive source member: '+m.name)
+                  if m.name in lock['files'] or m.name=='aigi_docs/UPSTREAM_LOCK.json':
+                      raise SystemExit('Payload must not replace upstream files or their lock')
+                  if m.size>4*1024*1024:raise SystemExit('Oversized source file')
+              if len(members)!=manifest['file_count']:raise SystemExit('Payload file count mismatch')
+              for m in members:
+                  p=root/m.name;p.parent.mkdir(parents=True,exist_ok=True)
+                  p.write_bytes(tf.extractfile(m).read())
+          for directory in ('aigi','aigi_tests','aigi_scripts'):
+              for p in (root/directory).rglob('*.py'):
+                  ast.parse(p.read_text(),filename=str(p))
+          for p in (root/'aigi_scripts').glob('*.sh'):
+              subprocess.run(['bash','-n',str(p)],check=True)
+          verify_originals()
+          print('Verified original files:',len(lock['files']))
+          print('Verified additive payload files:',len(members))
+          PY
+          python3 aigi_scripts/validate_source.py --root . --require-upstream --output /tmp/aigi_source_validation.json
+          git config user.name 'AIGI01 source import bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- aigi aigi_configs aigi_scripts aigi_tests aigi_docs AIGI_README.md aigi_requirements.txt aigi_environment.yml aigi_pytest.ini
+          git rm -r -- .github/aigi_deploy
+          git commit -m 'feat: add semantic codecs, training, OCRBench V2, profiling and study workflows'
+          git push origin HEAD:main
+      - name: Package complete tracked repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/aigi_release
+          git archive --format=zip --prefix=AIGI01/ HEAD -o /tmp/aigi_release/AIGI01_complete_source.zip
+          cp /tmp/aigi_source_validation.json /tmp/aigi_release/source_validation.json
+          git rev-parse HEAD > /tmp/aigi_release/COMMIT.txt
+          cd /tmp/aigi_release
+          sha256sum AIGI01_complete_source.zip > AIGI01_complete_source.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AIGI01-complete-source
+          path: /tmp/aigi_release/
+          retention-days: 30
